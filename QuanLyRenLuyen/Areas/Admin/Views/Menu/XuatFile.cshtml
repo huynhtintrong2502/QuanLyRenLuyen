@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "XuatFile";
+    Layout = "/Areas/Admin/Views/Shared/_Layouts.cshtml";
+    var ListNamHoc = (List<Model.EF.NamHoc>)ViewBag.ListNamHoc;
+    var ListHocKy = (List<Model.EF.HocKy>)ViewBag.ListHocKy;
+}
+
+<h2 style="margin-bottom: 40px; margin-top:-35px">Xuất File Excel</h2>
+
+
+@using (Html.BeginForm("XuatFile", "Menu", FormMethod.Post))
+{
+<div style="width:150px; float:left; display:inline-block;margin-left:40px">
+
+    <select id="cmb1" onchange="Show1();" class="form-control">
+        @foreach (var item in ViewBag.ListNamHoc)
+        {
+            <option value="@item.Id">@item.NamHoc1</option>
+        }
+    </select>
+</div>
+<input type="text" id="inp1" name="Id_NamHoc" style="width:0px; height:0px" />
+<div style="width:150px; float:left; display:inline-block;margin-left:40px">
+    <select id="cmb" onchange="Show();" class="form-control">
+        @foreach (var item in ViewBag.ListHocKy)
+        {
+            <option value="@item.Id">@item.HocKy1</option>
+        }
+    </select>
+</div>
+<input type="text" id="inp2" name="Id_HocKy" style="width:0px; height:0px; margin-left:4px" />
+<input type="submit" value="Xác Nhận" class="btn btn-light" /><br />
+@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+}
+
+
+<script type="text/javascript">
+        function Show() {
+            var cmb = document.getElementById("cmb");
+            document.getElementById("inp2").value = cmb.value;
+
+
+        }
+
+        function Show1() {
+            var cmb1 = document.getElementById("cmb1");
+            document.getElementById("inp1").value = cmb1.value;
+
+
+        }
+</script>

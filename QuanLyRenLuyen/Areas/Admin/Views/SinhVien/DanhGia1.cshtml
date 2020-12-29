@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "DanhGia1";
+    Layout = "~/Areas/Admin/Views/Home_SinhVien/_Layouts.cshtml";
+}
+@using (Html.BeginForm("DanhGia1", "SinhVien", FormMethod.Post))
+{
+<div style="width:150px; float:left; display:inline-block;margin-left:40px">
+
+    <select id="cmb1" onchange="Show1();" class="form-control">
+        @foreach (var item in ViewBag.ListNamHoc)
+        {
+            <option value="@item.Id">@item.NamHoc1</option>
+        }
+    </select>
+</div>
+<input type="text" id="inp1" name="Id_NamHoc" style="width:0px; height:0px" />
+<div style="width:150px; float:left; display:inline-block;margin-left:40px">
+    <select id="cmb" onchange="Show();" class="form-control">
+        @foreach (var item in ViewBag.ListHocKy)
+        {
+            <option value="@item.Id">@item.HocKy1</option>
+        }
+    </select>
+</div>
+<input type="text" id="inp2" name="Id_HocKy" style="width:0px; height:0px; margin-left:4px" />
+<button type="submit"  class="btn btn-light" style="width:auto;height:auto;margin-top:-18px" href="@Url.Action("DanhGia", "SinhVien",null)">Xác nhận</button>
+
+}
+<script type="text/javascript">
+        function Show() {
+            var cmb = document.getElementById("cmb");
+            document.getElementById("inp2").value = cmb.value;
+
+
+        }
+
+        function Show1() {
+            var cmb1 = document.getElementById("cmb1");
+            document.getElementById("inp1").value = cmb1.value;
+
+
+        }
+</script>

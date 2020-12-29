@@ -1,0 +1,10 @@
+C:\Users\Huynh Tin Trong\Desktop\QuanLyRenLuyen\QuanLyRenLuyen\Model\bin\Debug\Model.dll.config
+C:\Users\Huynh Tin Trong\Desktop\QuanLyRenLuyen\QuanLyRenLuyen\Model\bin\Debug\Model.dll
+C:\Users\Huynh Tin Trong\Desktop\QuanLyRenLuyen\QuanLyRenLuyen\Model\bin\Debug\Model.pdb
+C:\Users\Huynh Tin Trong\Desktop\QuanLyRenLuyen\QuanLyRenLuyen\Model\bin\Debug\EntityFramework.dll
+C:\Users\Huynh Tin Trong\Desktop\QuanLyRenLuyen\QuanLyRenLuyen\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Huynh Tin Trong\Desktop\QuanLyRenLuyen\QuanLyRenLuyen\Model\bin\Debug\EntityFramework.xml
+C:\Users\Huynh Tin Trong\Desktop\QuanLyRenLuyen\QuanLyRenLuyen\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Huynh Tin Trong\Desktop\QuanLyRenLuyen\QuanLyRenLuyen\Model\obj\Debug\Model.dll
+C:\Users\Huynh Tin Trong\Desktop\QuanLyRenLuyen\QuanLyRenLuyen\Model\obj\Debug\Model.pdb
+C:\Users\Huynh Tin Trong\Desktop\QuanLyRenLuyen\QuanLyRenLuyen\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

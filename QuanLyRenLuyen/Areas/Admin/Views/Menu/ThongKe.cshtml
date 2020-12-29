@@ -1,0 +1,71 @@
+﻿@model Model.EF.User
+@{
+    ViewBag.Title = "ThongKe";
+    Layout = "/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+<h3 style="margin-bottom: 20px; margin-top:-35px">THỐNG KÊ</h3>
+
+
+@using (Html.BeginForm("ThongKe", "Menu", FormMethod.Post))
+{
+    <div style="width:150px; float:left; display:inline-block;margin-left:40px">
+
+        <select id="cmb1" onchange="Show1();" class="form-control">
+            @foreach (var item in ViewBag.ListNamHoc)
+            {
+                <option value="@item.Id">@item.NamHoc1</option>
+            }
+        </select>
+    </div>
+    <input type="text" id="inp1" name="Id_NamHoc" style="width:0px; height:0px" />
+    <div style="width:150px; float:left; display:inline-block;margin-left:40px">
+        <select id="cmb" onchange="Show();" class="form-control">
+            @foreach (var item in ViewBag.ListHocKy)
+            {
+                <option value="@item.Id">@item.HocKy1</option>
+            }
+        </select>
+    </div>
+    <input type="text" id="inp2" name="Id_HocKy" style="width:0px; height:0px; margin-left:4px" />
+    <input type="submit" value="Xác Nhận" class="btn btn-light" />
+    <div class="row" style="margin-top:40px">
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <canvas id="barChart" style="height:230px"></canvas>
+                    <h4 style="margin-top:20px; text-align:center" class="card-title">Biểu đồ thể hiện số lượng thành tích sinh viên</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+
+                    <canvas id="doughnutChart" style="height:250px"></canvas>
+                    <h4 style="margin-top:20px; text-align:center" class="card-title">Biểu đồ thể hiện cơ cấu sinh viên hoàn thành</h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+}
+
+<script type="text/javascript">
+        function Show() {
+            var cmb = document.getElementById("cmb");
+            document.getElementById("inp2").value = cmb.value;
+
+
+        }
+
+        function Show1() {
+            var cmb1 = document.getElementById("cmb1");
+            document.getElementById("inp1").value = cmb1.value;
+
+
+        }
+</script>
+

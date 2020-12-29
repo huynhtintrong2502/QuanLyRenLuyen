@@ -1,0 +1,157 @@
+﻿@model Model.EF.SinhVien
+@{
+    ViewBag.Title = "Account";
+    Layout = "~/Areas/Admin/Views/Home_SinhVien/_Layouts.cshtml";
+}
+
+
+
+<h3 style="margin-bottom: 20px; margin-top:-35px">THÔNG TIN ACCOUNT</h3>
+
+@using (Html.BeginForm("Account", "SinhVien", FormMethod.Post))
+{
+<div class="card">
+    <div class="card-body">
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        <h4 class="card-title">
+            <img class="product__item__pic set-bg" style="border: 1px solid #c2e1fd ;
+                    box-shadow: 0px 3px 15px 3px #889eaf;width:100px; height: 120px;margin-bottom:20px; border-radius:5%; " src="@Model.Anh" alt="logo" class="product__item__pic set-bg" />
+        </h4>
+
+
+
+        <form class="form-sample">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Mã SV</label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(model => model.MaSV, new { @class = "form-control", @autofocus = "autofocus" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Họ tên</label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(model => model.HoTen, new { @class = "form-control", @autofocus = "autofocus" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Giới tính</label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(model => model.GioiTinh, new { @class = "form-control", @autofocus = "autofocus" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Ngày sinh</label>
+                        <div class="col-sm-9">
+                            @* @Html.TextBoxFor(model => model.NgaySinh, new { @class = "form-control", @autofocus = "autofocus" })*@
+                            <input id="datepicker" value="@Model.NgaySinh" width="276" name="ngaySinh" class="form-control" placeholder="mm/DD/yyyy"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Số ĐT</label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(model => model.SoDT, new { @class = "form-control", @autofocus = "autofocus" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @autofocus = "autofocus" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Nơi sinh</label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(model => model.NoiSinh, new { @class = "form-control", @autofocus = "autofocus" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Chỗ tạm trú</label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(model => model.ChoTamTru, new { @class = "form-control", @autofocus = "autofocus" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Chức vụ</label>
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(model => model.ChucVu, new { @class = "form-control", @autofocus = "autofocus" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Lớp</label>
+                        <div class="col-sm-9">
+                            
+                            @Html.DropDownListFor(model => model.Id_Lop, null, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label"> </label>
+                        <div class="col-sm-9">
+                            <button type="submit" class="btn btn-gradient-primary mr-2" style="width:150px">Save</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                           
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+        </form>
+    </div>
+
+
+    
+
+
+
+</div>
+}
+
+
+
+
+
+
+
+
+
+
+

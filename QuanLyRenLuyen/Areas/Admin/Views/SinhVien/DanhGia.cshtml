@@ -1,0 +1,676 @@
+﻿@model Model.EF.SinhVien
+@{
+    ViewBag.Title = "DanhGia";
+    Layout = "~/Areas/Admin/Views/Home_SinhVien/_Layouts.cshtml";
+    var diemSV = (Model.EF.DiemRenLuyen)ViewBag.DiemSV;
+
+}
+
+@using (Html.BeginForm("DanhGia", "SinhVien", FormMethod.Post))
+{
+    <h2 style="margin-bottom: 20px; margin-top:-35px">Đánh Giá</h2>
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" });
+    if (diemSV == null)
+    {
+        <h3>Mời bạn kiểm tra lại thông tin</h3>;
+    }
+    
+        <h4 style="margin-bottom:10px;margin-top:20px ">1. Ý thức học tập.</h4>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">1.1. Kết quả học tập.</h4>
+                <div class="card-body">
+                    <div class="row" style="margin-top: -30px;">
+                        <div>
+                            <div class="form-group row">
+                                <ul class="list-group">
+                                    <li style="margin-left:70px;">
+                                        Điểm trung bình chung học kỳ <br />
+                                        <div style="margin-top:10px">
+                                            <input value="@diemSV.DiemKyTruoc" type="text" name="DiemHKTruoc"  class="form-control" placeholder="Điểm học kỳ Trước" style="width: 160px; display:inline" />
+                                            <input value="@diemSV.DiemKyNay" type="text" name="DiemHKNay" class="form-control" placeholder="Điểm học kỳ Này" style="width: 160px;display:inline; margin-left:20px" />
+                                        </div>
+                                        <div class="row" style="margin-left:20px; ">
+                                            <ul class="col-md-6" style="padding:10px;">
+                                                <li>
+                                                    <label class="col-form-label">Dưới 4.0:</label>
+                                                    <label class="col-form-label">..........................+3đ</label>
+                                                </li>
+                                                <li>
+                                                    <label class="col-form-label">Từ 4.0 - Cận 5.0:</label>
+                                                    <label class="col-form-label">.........+6đ</label>
+                                                </li>
+                                                <li>
+                                                    <label class="col-form-label">Từ 5.0 - Cận 6.5:</label>
+                                                    <label class="col-form-label">..........+8đ</label>
+                                                </li>
+                                            </ul>
+
+                                            <ul class="col-md-6" style="padding:10px;">
+                                                <li>
+                                                    <label class="col-form-label">Từ 6.5 - Cận 8.0:</label>
+                                                    <label class="col-form-label">..........+10đ</label>
+                                                </li>
+                                                <li>
+                                                    <label class="col-form-label">Từ 8.0 - 10.0:</label>
+                                                    <label class="col-form-label">..................+12đ</label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                    <li style="margin-left:70px;">
+                                        Tăng ĐTB chung học kỳ so với ĐTB chung học kỳ của kỳ trước <br />
+
+                                        <div class="row" style="margin-left:20px; ">
+                                            <ul class="col-md-6" style="padding:10px; width:300px">
+                                                <li>
+                                                    <label class="col-form-label">Từ 0.01– cận 0.1:</label>
+                                                    <label class="col-form-label">...........+1đ</label>
+                                                </li>
+                                                <li>
+                                                    <label class="col-form-label">Từ 0.1 – cận 0.2:</label>
+                                                    <label class="col-form-label">...........+2đ</label>
+                                                </li>
+                                                <li>
+                                                    <label class="col-form-label">Từ 0.2 – cận 0.3:</label>
+                                                    <label class="col-form-label">..........+3đ</label>
+                                                </li>
+                                                <li>
+                                                    <label class="col-form-label">Từ 0.3 – cận 0.4:</label>
+                                                    <label class="col-form-label">..........+4đ</label>
+                                                </li>
+                                                <li>
+                                                    <label class="col-form-label">Từ 0.4 – cận 0.5:</label>
+                                                    <label class="col-form-label">..........+5đ</label>
+                                                </li>
+                                            </ul>
+
+                                            <ul class="col-md-6" style="padding:10px;">
+                                                <li>
+                                                    <label class="col-form-label">Từ 0.5– cận 0.6:</label>
+                                                    <label class="col-form-label">...........+6đ</label>
+                                                </li>
+                                                <li>
+                                                    <label class="col-form-label">Từ 0.6 – cận 0.7:</label>
+                                                    <label class="col-form-label">..........+7đ</label>
+                                                </li>
+                                                <li>
+                                                    <label class="col-form-label">Từ 0.7 – cận 0.8:</label>
+                                                    <label class="col-form-label">..........+8đ</label>
+                                                </li>
+                                                <li>
+                                                    <label class="col-form-label">Từ 0.8 – cận 0.9:</label>
+                                                    <label class="col-form-label">..........+9đ</label>
+                                                </li>
+                                                <li>
+                                                    <label class="col-form-label">Từ 0.9 trở lên:</label>
+                                                    <label class="col-form-label">...............+10đ</label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                                <input style="width:150px" name="Diem_1_1" type="number" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.Muc1_1.ToString()" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <h4 class="card-title">1.2. Ý thức và kết quả tham gia các hoạt động học thuật.</h4>
+                <div class="card-body">
+
+                    <table class="table table-striped" border="1">
+                        <thead>
+                            <tr>
+                                <th> </th>
+                                <th>Cấp tỉnh,<br> TƯ(hoặc cấp<br> t.đương)</th>
+                                <th>Cấp trường<br>(hoặc cấp <br>t.đương) </th>
+                                <th>Cấp khoa,<br> liên chi Đoàn/Hội,<br>(hoặc cấp t.đương)</th>
+                                <th>Cấp lớp,<br> chi đoàn <br>(hoặc cấp t.đương) </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center" colspan="5">Các hoạt động NCKHSV, Olympic các môn học, các cuộc thi học thuật, khởi nghiệp,...</td>
+                            </tr>
+                            <tr>
+                                <td>Giải I</td>
+                                <td>+10đ</td>
+                                <td s>+9đ</td>
+                                <td>+7đ</td>
+                                <td>+5đ</td>
+                            </tr>
+                            <tr>
+                                <td>Giải II</td>
+                                <td>+9đ</td>
+                                <td>+8đ</td>
+                                <td>+6đ</td>
+                                <td>+4đ</td>
+                            </tr>
+                            <tr>
+                                <td>Giải III</td>
+                                <td>+8đ</td>
+                                <td>+7đ</td>
+                                <td>+5đ</td>
+                                <td>+3đ</td>
+                            </tr>
+                            <tr>
+                                <td>Giải KK</td>
+                                <td>+7đ</td>
+                                <td>+6đ</td>
+                                <td>+4đ</td>
+                                <td>+2đ</td>
+                            </tr>
+                            <tr>
+                                <td>Tham gia</td>
+                                <td>+5đ</td>
+                                <td>+4đ</td>
+                                <td>+2đ</td>
+                                <td>+1đ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                                <input style="width:150px" name="Diem_1_2" type="number" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.Muc1_2.ToString()" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Ghi chú:</label>
+                                <textarea cols="20" id="Description" name="GhiChu1_2" rows="2" class="form-control" placeholder="Nhập nội dung" value="@diemSV.GhiChu1_2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <h4 class="card-title">1.3. Tích cực học tập nâng cao trình độ ngoại ngữ:</h4>
+                <div class="card-body">
+                    <ul style="margin-left: 30px;margin-top: -30px;">
+                        <li>Chứng chỉ ngoại ngữ B1 (theo chuẩn đầu ra của Trường): +3đ</li>
+                        <li>IELTS, TOEFL, TOEIC, tiếng Nhật,...:                   +5đ/chứng chỉ</li>
+                    </ul>
+
+                    <div class="row" style="margin-top:20px">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                                <input style="width:150px" name="Diem_1_3" type="number" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.Muc1_3.ToString()" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Ghi chú:</label>
+                                <textarea cols="20" id="Description" name="GhiChu1_3" rows="2" class="form-control" placeholder="Nhập nội dung" value="@diemSV.GhiChu1_3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h4 class="card-title">1.4. Chấp hành tốt các nội quy, quy định: </h4>
+                <div class="card-body">
+                    <ul style="margin-left: 30px;margin-top: -30px;">
+                        <li>Về học vụ (chuyên cần, thực hành, thực tế, thực tập,...):+4đ</li>
+                        <li>Vi phạm (nhắc nhở, khiển trách):                         -1đ đến -3đ/lần</li>
+                    </ul>
+
+                    <div class="row" style="margin-top:20px">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                                <input style="width:150px" name="Diem_1_4" type="number" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.Muc1_4.ToString()" />
+                            </div>
+                        </div>
+                    </div>
+                    <label class="col-form-label" style="font-size:20px">Tổng điểm mục I:   @diemSV.TongMuc1 điểm</label>
+                </div>
+
+            </div>
+        </div>
+
+        <h4 style="margin-bottom:10px;margin-top:60px ">2. Ý thức và kết quả chấp hành nội quy, quy chế trong nhà trường:</h4>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">2.1. Chấp hành đầy đủ và không vi phạm các nội quy, quy chế:</h4>
+                <div class="card-body">
+                    <ul style="margin-left: 30px;margin-top: -30px;">
+                        <li>Về: học tập, sinh hoạt, thực hiện nếp sống văn hóa, văn minh,...: +20đ</li>
+                    </ul>
+                    <p style="margin-top: 10px;font-size: 18px; margin-left: -25px"><B>Lưu ý:</B> Trong trường hợp có vi phạm thì điểm trên sẽ bị giảm trừ như sau:</p>
+                    <ul style="margin-left: 30px">
+                        <li>Không tham gia (hoặc bài thu hoạch không đạt) các buổi sinh hoạtchính trị đầu năm, đầu khóa, cuối khóa: -10đ</li>
+                        <li>Vắng đại hội lớp, đoàn, hội (không có lý do chính đáng): -7đ/lần</li>
+                        <li>Vắng sinh hoạt lớp, đoàn,... (không lý do chính đáng): -5đ/lần.</li>
+                        <li>Đóng học phí, các loại quỹ (lớp, đoàn, hội,...): đóng trễ hạn -2đ/nội dung, không đóng -5đ/nội dung.</li>
+                        <li>Vi phạm quy định đồng phục, trang phục: -1đ/lần.</li>
+                        <li>Các trường hợp khác do lớp, hội đồng khoa quyết định điểm trừ.</li>
+
+                    </ul>
+                    <div class="row" style="margin-top:20px">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                                <input style="width:150px" name="Diem_2_1" type="number" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.Muc2_1.ToString()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="card-title">2.2. Nội trú, ngoại trú:</h4>
+                <div class="card-body">
+                    <ul style="margin-left: 30px;margin-top: -30px;">
+                        <li>Chấp hành đầy đủ và không vi phạm các quy chế nội, ngoại trú: +5đ.</li>
+                        <li>Trường hợp vi phạm (có báo cáo về khoa, trường):              -5đ/lần.</li>
+                    </ul>
+
+                    <div class="row" style="margin-top:20px">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                                <input style="width:150px" name="Diem_2_2" type="number" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.Muc2_2.ToString()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h4 class="card-title">2.3. Sinh viên vi phạm các nội quy, quy chế thi,... bị kỷ luật:</h4>
+                <div class="card-body">
+                    <ul style="margin-left: 30px;margin-top: -30px;">
+                        <li>Mức khiển trách:      -15đ/lần.</li>
+                        <li>Mức cảnh cáo trở lên: -20đ/lần</li>
+                    </ul>
+
+                    <div class="row" style="margin-top:20px">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                                <input style="width:150px" name="Diem_2_3" type="number" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.Muc2_3.ToString()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <label class="col-form-label" style="font-size:20px">Tổng điểm mục II:   @diemSV.TongMuc2 điểm</label>
+            </div>
+        </div>
+
+
+        <h4 style="margin-bottom:10px;margin-top:60px ">3. Ý thức và kết quả tham gia các hoạt động chính trị - xã hội, vănhóa, văn nghệ, thể thao, phòng chống các tệ nạn xã hội:</h4>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">3.1. Tham gia các hoạt động chính trị-XH, VH-VN-TDTT, ngoại khóa,phòng chống tệ nạn XH:</h4>
+                <div class="card-body">
+                    <p style="margin-top:-35px">Tham gia thi với tư cách (cá nhân) là sv của trường/khoa hoặc là thành viên của 1 đội tuyển (do lớp, khoa, LCĐ/LCH, hoặc các đơn vị trong trường thành lập); hoặc tham gia tổ chức; hoặc tham dự, cổ vũ:</p>
+
+
+                    <table class="table table-striped" border="1">
+                        <thead>
+                            <tr>
+                                <th> </th>
+                                <th>Cấp tỉnh,<br> TƯ(hoặc cấp<br> t.đương)</th>
+                                <th>Cấp trường<br>(hoặc cấp <br>t.đương) </th>
+                                <th>Cấp khoa,<br> liên chi Đoàn/Hội,<br>(hoặc cấp t.đương)</th>
+                                <th>Cấp lớp,<br> chi đoàn <br>(hoặc cấp t.đương) </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Giải I</td>
+                                <td>+15đ</td>
+                                <td>+10đ</td>
+                                <td>+9đ</td>
+                                <td>+5đ</td>
+                            </tr>
+                            <tr>
+                                <td>Giải II</td>
+                                <td>+14đ</td>
+                                <td>+9đ</td>
+                                <td>+8đ</td>
+                                <td>+4đ</td>
+                            </tr>
+                            <tr>
+                                <td>Giải III</td>
+                                <td>+13đ</td>
+                                <td>+8đ</td>
+                                <td>+7đ</td>
+                                <td>+3đ</td>
+                            </tr>
+                            <tr>
+                                <td>Giải KK</td>
+                                <td>+12đ</td>
+                                <td>+7đ</td>
+                                <td>+6đ</td>
+                                <td>+2đ</td>
+                            </tr>
+                            <tr>
+                                <td>Tham gia</td>
+                                <td>+8đ</td>
+                                <td>+5đ</td>
+                                <td>+4đ</td>
+                                <td>+2đ</td>
+                            </tr>
+                            <tr>
+                                <td>Cổ vũ</td>
+                                <td>+2đ</td>
+                                <td>+2đ</td>
+                                <td>+2đ</td>
+                                <td>+2đ</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center" colspan="5">Với các hoạt động không có giải thưởng</td>
+                            </tr>
+                            <tr>
+                                <td>Tham gia</td>
+                                <td>+13đ</td>
+                                <td>+8đ</td>
+                                <td>+7đ</td>
+                                <td>+3đ</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center" colspan="5">Thành viên BTC hoàn thành tốt nhiệm vụ</td>
+                            </tr>
+                            <tr>
+                                <td>Tham gia</td>
+                                <td>+14đ</td>
+                                <td>+9đ</td>
+                                <td>+8đ</td>
+                                <td>+5đ</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center" colspan="5">Hỗ trợ BTC hoàn thành tốt nhiệm vụ</td>
+                            </tr>
+                            <tr>
+                                <td>Tham gia</td>
+                                <td>+10đ</td>
+                                <td>+7đ</td>
+                                <td>+6đ</td>
+                                <td>+3đ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="row" style="margin-top:20px">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                                <input style="width:150px" name="Diem_3_1" type="number" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.Muc3_1.ToString()" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Ghi chú:</label>
+                                <textarea cols="20" id="Description" name="GhiChu3_1" rows="2" class="form-control" placeholder="Nhập nội dung" value="@diemSV.GhiChu3_1"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h4 class="card-title">3.2. Tham gia các hoạt động huy động lực lượng (cấp khoa trở lên): +3đ/lần</h4>
+                <div class="card-body" style="margin-top:-30px">
+                    <div class="row" style="margin-top:20px">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                                <input style="width:150px" name="Diem_3_2" type="number" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.Muc3_2.ToString()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <label class="col-form-label" style="font-size:20px">Tổng điểm mục III:   @diemSV.TongMuc3 điểm</label>
+            </div>
+        </div>
+
+
+        <h4 style="margin-bottom:10px;margin-top:60px ">4. Phẩm chất công dân và quan hệ cộng đồng:</h4>
+        <div class="card">
+            <div class="card-body" style="margin-top:5px">
+                <h4 class="card-title">4.1. Chấp hành tốt và tuyên truyền các chủ trương của Đảng, chính sách, pháp luật của Nhà nước; quan hệ tốt trong lớp, trong trường, ở nơi cư trú; có lối sống lành mạnh(không sử dụng ma túy và các chất gây nghiện; không hút thuốc lá; hạn chế uống rượu, bia,..):..+15đ:</h4>
+                <div class="card-body" style="margin-top:-30px">
+                    <ul style="margin-left: 30px;">
+                        <li>Trường hợp vi phạm bị nhắc nhở:    -2đ/lần</li>
+                        <li>Vi phạm bị từ khiển trách trở lên: -3đ/lần.</li>
+                    </ul>
+
+                    <div class="row" style="margin-top:20px">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                                <input style="width:150px" name="Diem_4_1" type="number" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.Muc4_1.ToString()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="card-title">4.2. Tham gia các hoạt động tình nguyện, hoạt động xã hội:</h4>
+                <div class="card-body">
+                    <ul style="margin-left: 30px;margin-top: -30px;">
+                        <li>Tham gia (đạt yêu cầu trở lên) chuỗi hoạt động tình nguyện có quy mô vừa/lớn (mùa hè xanh, tiếp sức mùa thi,...): +7đ đến +10đ/lần.</li>
+                        <li>Tham gia các hoạt động tình nguyện tại chỗ (trong ngày): +3đ/lần.</li>
+                        <li>Hiến máu tình nguyện (có giấy chứng nhận): +5đ/lần.</li>
+                        <li>
+                            Tham gia đội xung kích của khoa:<br />
+                            <ul style="margin-left:30px">
+                                <li>Hoàn thành nhiệm vụ:              +3đ</li>
+                                <li>Hoàn thành tốt/xuất sắc nhiệm vụ: +6đ</li>
+                            </ul>
+                        </li>
+                        <li>Tham gia đội xung kích trường: +3đ.</li>
+                    </ul>
+
+                    <div class="row" style="margin-top:20px">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                                <input style="width:150px" name="Diem_4_2" type="number" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.Muc4_2.ToString()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="card-title">4.3. Tham gia giữ gìn trật tự an toàn xã hội, đấu tranh bảo vệ pháp luật; chia sẻ giúp đỡ người thân; cứu giúp người khó khăn, hoạn nạn:.......+3đ.</h4>
+                <div class="card-body">
+                    <ul style="margin-left: 30px;margin-top: -30px;">
+                        <li>Có thành tích (được biểu dương, khen thưởng,...): +10đ</li>
+                    </ul>
+
+                    <div class="row" style="margin-top:20px">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                                <input style="width:150px" name="Diem_4_3" type="number" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.Muc4_3.ToString()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <label class="col-form-label" style="font-size:20px">Tổng điểm mục IV:   @diemSV.TongMuc4 điểm</label>
+            </div>
+        </div>
+
+
+        <h4 style="margin-bottom:10px;margin-top:60px ">5. Ý thức và kết quả tham gia hoạt động của lớp, các đoàn thể, tổ chức khác trong trường:</h4>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">5.1. Ban cán sự lớp, cán bộ Đoàn (chi đoàn, LCĐ, Đoàn trường), cán bộ Hội Sinh viên (chi hội, LCH, HSV trường), đội trưởng/phó đội xung kích (khoa, trường), ban chủ nhiệm các CLB thuộc khoa:</h4>
+                <div class="card-body">
+                    <ul style="margin-left: 30px;margin-top: -30px;">
+                        <li>Hoàn thành nhiệm vụ (hoàn thành/tốt/xuất sắc): +1đ đến +7đ</li>
+                        <li>Không hoàn thành nhiệm vụ:                     -1đ đến -2đ</li>
+                    </ul>
+
+                    <div class="row" style="margin-top:20px">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                                <input style="width:150px" name="Diem_5_1" type="number" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.Muc5_1.ToString()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="card-title">5.2. Sinh viên là nhân tố tích cực trong các hoạt động của lớp, khoa, trường( không thuộc các đối tượng ở mục 5.1):</h4>
+                <div class="card-body">
+                    <ul style="margin-left: 30px;margin-top: -30px;">
+                        <li>+1đ đến +5đ</li>
+                    </ul>
+
+                    <div class="row" style="margin-top:20px">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                                <input style="width:150px" name="Diem_5_2" type="number" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.Muc5_2.ToString()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="card-title">5.3. Là thành viên của ít nhất 1 câu lạc bộ học thuật/kỹ năng của Trường Đại học Quy Nhơn:......+3đ</h4>
+                <div class="card-body">
+
+                    <div class="row" style="margin-top: -30px; margin-bottom: -20px">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                                <input style="width:150px" name="Diem_5_3" type="number" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.Muc5_3.ToString()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <label class="col-form-label" style="font-size:20px">Tổng điểm mục V:   @diemSV.TongMuc5 điểm</label>
+            </div>
+        </div>
+
+
+
+        <h4 style="margin-bottom:10px;margin-top:60px ">6. Sinh viên có thành tích đặc biệt:</h4>
+        <div class="card">
+            <div class="card-body">
+                <div class="card-body">
+                    <ul style="margin-left: 30px;margin-top: -50px;">
+                        <li>Được khen thưởng cấp khoa, LCĐ, LCH:       +6đ</li>
+                        <li>Được khen thưởng cấp trường/tỉnh:          +8đ</li>
+                        <li>Được khen thưởng cấp bộ, quốc gia trở lên: +10đ</li>
+                    </ul>
+
+                    <div class="row" style="margin-top:20px">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                                <input style="width:150px" name="Diem_6_1" type="number" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.Muc6_1.ToString()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <h4 style="margin-bottom:10px;margin-top:60px ">Điểm tổng:</h4>
+        <div class="card">
+            <div class="card-body" style="margin-top: -30px;margin-bottom:-30px">
+                <div class="row" style="margin-top:20px">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">Cập nhật lần cuối:</label>
+                                    <label class="col-sm-6 col-form-label" style="font-size:14px; width:50px;margin-left: -55px;">@diemSV.DateUpdate</label>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Nhập điểm:</label>
+                            <input style="width:150px" type="number" class="form-control" placeholder="Lớp đánh giá" value="@ViewBag.DiemTong_Lop" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <input type="submit" style="margin-top: 20px;width: 150px;margin-left: auto; margin-right: auto;" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="#" id="Luu" value="Lưu" />
+       
+        <input style="width:0px;height:0px" name="MaSV" type="text" class="form-control" placeholder="Lớp đánh giá" value="@diemSV.MaSV " />
+
+}
